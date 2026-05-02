@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="來源檔案">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="標頭檔">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="資源檔">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{f6fb4ec7-a8d9-4c02-965d-6dd36d99c6f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shader">
+      <UniqueIdentifier>{6408dbb9-9e2d-4545-af97-8b760814510c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="common\arcball.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\background.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\bullet.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\CAirplane.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\CBoss.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\CBossGun.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\CBulletOne.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\CBulletThree.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\CBulletTwo.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\CDead.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\CQuad.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\CShaderPool.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\CShape.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\CShield.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\CSkill.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\CStar.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\CVillain.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\CVillainTwo.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\initShader.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\skill.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\villain.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\wmhandler.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\CLevel.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="common\arcball.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\background.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\bullet.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\CAirplane.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\CBoss.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\CBossGun.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\CBulletOne.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\CBulletThree.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\CBulletTwo.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\CDead.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\CQuad.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\CShaderPool.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\CShape.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\CShield.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\CSkill.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\CStar.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\CVillain.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\CVillainTwo.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\initshader.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\skill.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\typedefs.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\villain.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\wmhandler.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\CLevel.h">
+      <Filter>common</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="fshader21.glsl">
+      <Filter>shader</Filter>
+    </None>
+    <None Include="vshader21.glsl">
+      <Filter>shader</Filter>
+    </None>
+  </ItemGroup>
+</Project>

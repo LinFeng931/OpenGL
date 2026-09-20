@@ -1,32 +1,4 @@
 //#define GLM_ENABLE_EXPERIMENTAL 1
-/*
-³]­p¤@­Ó©Ğ¶¡¡A¦Ü¤Ö¥]§t¤»­Ó°Ï°ì¡A¥i¥H¤£¥Î¬W¤l¡Aª½±µ¥Î¨â­Ó¥|¤è§Î°µ°Ï¹j§Y¥i¡A¥kÃä¬°¥Ü·N¹Ï¡A§A¥i¥H¦Û¤v³]­p¡Aºñ¦âªí¥ÜÃèÀY¤@¶}©lªº¦ì¸m
-(12%)µe¥X¤»­Ó©Ğ¶¡¡A¨Ã¹F¦¨¥H¤Uªº±ø¥ó¡]½sÄ¶­n¯à¹L¥B¥¿±`°õ¦æ¤~ºâ¡^
-    v¨C¤@­±Àğ³£¥²¶·¦³¶K¹Ï
-    v¥²¶·¦Ü¤Ö¦³¤T­Ó©Ğ¶¡¬O¨Ï¥Î¿O¥ú·Ó©ú¡A¦Ó¥B¬O¨Ï¥Î Per Pixel Lighting
-    v¨C¤@­Ó©Ğ¶¡¤¤³£¥²¶·¦³©ñ¸m¸Ë¹¢«~(³¡¤À¥²¶·¦³¶K¹Ï)
-    v(2%) ¥²¶·¦³©Ğ¶¡Åã¥Ü¦Ü¤Ö(§t)¤@­Ó OBJ ÀÉªº¼Ò«¬¡A¦Ó¥B¥]§t¶K¹Ï
-(8%)Àô¹Ò»P¾Ş±±
-    v(2%) ÃèÀYªº²¾°Ê¬O®Ú¾Ú¥Ø«eªºµø¨¤¤è¦V
-    v(2%) ¤£·|¬ïÀğ
-    v(2%) ·|³Q¾÷ÃöÄ²°Êªº°ÊºA²¾°Ê¥ú·½¡A¨Ï¥Î Per Pixel Lighting
-    v(2%) ¦Ü¤Ö¤T­±Àğ¾À¤W¥b³z©úªº¬Á¼ş
-(8 %)¹Ï¾Ç¬ÛÃö¥\¯àªº¨Ï¥Î¡A¥²¶·¦bµ{¦¡½X¤¤¥Hµù¸Ñ²M·¡¼Ğ©ú
-    v(1%) °w¹ï¯S©wª«¥ó¹ê²{ Billboards ªº¥\¯à
-    v(1%) ¨Ï¥Î¨ì  Mipmapped ªº¥\¯à ¡]¦³¨ãÅéªº»¡©ú¦bµ{¦¡½X¤¤¡^
-    v(2%) ¦³©Ğ¶¡¨Ï¥Î¨ì Light Map ªº¥\¯à ¡]¦³¨ãÅéªº»¡©ú¦bµ{¦¡½X¤¤¡^
-    v(2%) ¦³ª«¥ó¨Ï¥Î¨ì Normal Map ªº¥\¯à ¡]¦³¨ãÅéªº»¡©ú¦bµ{¦¡½X¤¤¡^
-    v(2%) ¦³ª«¥ó¨Ï¥Î¨ì Environment Map ªº¥\¯à (¦³¨ãÅéªº»¡©ú¦bµ{¦¡½X¤¤¡^
-(6%) ¨ä¥L§AÄ±±o¥i¥H®i¥Üªº§Ş³N¡A¥]§tª«²z©Î¬O¼Æ¾Çªº¹Bºâ
-    v(3%)µo®g¤l¼u¨Ã¥B¦bÀğ¾À¤W¯d¤U¼u¤Õ
-    v(3%)¥i¥H¯}Ãa©Ğ¶¡¤ºªºÂ\³]
-(4%) ³Ğ·N¤À¼Æ
-¦Ñ®vµ¹¤À¡A½Ğ¦Û¦æµo´§
-ªù¥i¥H¶}Ãö¡A¨Ã¥BÃö°_®É·|ªı¾×ª±®a«e¶i
-¯}Ãaª««~¦³²É¤l®ÄªG
-¤ôªº®ÄªG
-Æ_°Í¶}ªù
-*/
 
 #include <iostream>
 #include <fstream>
@@ -67,7 +39,7 @@
 #define ROW_NUM 10
 #define NUM_LIGHTS 6
 
-//¶K¹Ï
+//è²¼åœ–
 TextureData g_texData[48];
 TextureData g_waterTex[30];
 GLuint g_uiCubeMap, g_uiCubeMap2; // for Cube Texture Object
@@ -81,7 +53,7 @@ CRoom room[6]{
     CRoom(-9.01f, -27.01f, -27.02f, -45.02f)
 };
 
-//objÀÉ®×
+//objæª”æ¡ˆ
 CObj g_window[6],
 g_doll[6][2],
 g_chair,
@@ -118,7 +90,7 @@ g_sakula;
 
 CQuad w_glass[6][4], w2_glass[2], g_bird[5], water, floor_outside, tvshow, hole[10], hint[5];
 
-//°ÊºA±±¨î¶µ
+//å‹•æ…‹æ§åˆ¶é …
 int ani = 0; //water animation
 float ani_clock = 0.0f;
 
@@ -140,7 +112,7 @@ float lockdisable2_clock = 0.0f;
 
 CCube break_cube[50], classroom_light, cflower[300];
 
-glm::vec3 g_eyeloc(6.0f, 4.5f, 6.0f); // ÃèÀY¦ì¸m
+glm::vec3 g_eyeloc(6.0f, 4.5f, 6.0f); // é¡é ­ä½ç½®
 
 GLuint g_shadingProg;
 GLuint g_nolightShader;
@@ -149,7 +121,7 @@ GLuint g_uiShader;
 GLint g_3dviewLoc, g_3dProjLoc;
 GLint g_2dviewLoc, g_2dProjLoc;
 
-// ¥ş°ì¥ú·½
+// å…¨åŸŸå…‰æº
 CLight g_light[10]{
     CLight(glm::vec3(0.0f, 8.5f, 0.0f)),
     CLight(glm::vec3(-9.0f, 5.0f, -19.0f)),
@@ -159,14 +131,14 @@ CLight g_light[10]{
     CLight(glm::vec3(-23.0f, 6.0f, -40.0f)),
     CLight(glm::vec3(-21.5f, -1.0f, -17.0f)),
 
-    //¤¬°Ê¥ú·½
+    //äº’å‹•å…‰æº
     CLight(glm::vec3(5.0f, 5.0f, -2.0f)),
     CLight(glm::vec3(-18.0f, 5.0f, -18.0f)),
     CLight(glm::vec3(-4.0f, 5.0f, -24.0f)),
 };
 
-// ¥ş°ì§÷½è¡]¥i¨Ì¼Ò«¬¤À§O³]©w¡^
-CMaterial g_matBeige;   // ²L¦Ì¥Õ²`³Á¦Ç
+// å…¨åŸŸæè³ªï¼ˆå¯ä¾æ¨¡å‹åˆ†åˆ¥è¨­å®šï¼‰
+CMaterial g_matBeige;   // æ·ºç±³ç™½æ·±éº¥ç°
 CMaterial g_matWaterGreen;
 CMaterial g_matWoodHoney;
 CMaterial g_matWoodBleached;
@@ -187,7 +159,7 @@ CMaterial g_matWoodDark;
 CMaterial g_matWater;
 CMaterial g_matYellowSofa;
 
-//2d¤¶­±
+//2dä»‹é¢
 std::array<CButton, 2> g_button = {
     CButton(5.0f, 5.0f),
     CButton(40.0f, 50.0f),
@@ -266,7 +238,7 @@ void loadScene(void)
     g_light[6]._wing[0].setPos(glm::vec3(-21.5f, -1.0f, -17.2f));
 
 
-    //¤¬°Ê¥ú
+    //äº’å‹•å…‰
     g_light[7].setShaderID(g_shadingProg, "uLight[7]");
     g_light[7].setAmbient(glm::vec4(0.1f, 0.1f, 0.3f, 1.0f));
     g_light[7].setDiffuse(glm::vec4(0.4f, 0.6f, 1.0f, 1.0f));
@@ -288,8 +260,8 @@ void loadScene(void)
 
 
     g_light[8].setShaderID(g_shadingProg, "uLight[8]");
-    g_light[8].setAmbient(glm::vec4(0.2f, 0.05f, 0.02f, 1.0f)); // ²H²Hªº¯»¾ïÀô¹Ò¥ú
-    g_light[8].setDiffuse(glm::vec4(1.0f, 0.4f, 0.3f, 1.0f));  // °ª¹¡©M¯»¾ï¦â
+    g_light[8].setAmbient(glm::vec4(0.2f, 0.05f, 0.02f, 1.0f)); // æ·¡æ·¡çš„ç²‰æ©˜ç’°å¢ƒå…‰
+    g_light[8].setDiffuse(glm::vec4(1.0f, 0.4f, 0.3f, 1.0f));  // é«˜é£½å’Œç²‰æ©˜è‰²
     g_light[8].setAttenuation(1.0f, 0.5f, 0.2f);
     g_light[8].setIntensity(5.0f);
     g_light[8].setActiveType(2);
@@ -307,8 +279,8 @@ void loadScene(void)
     g_light[8]._wing[1].setScale(glm::vec3(0.5f, 0.01f, 0.3f));
 
     g_light[9].setShaderID(g_shadingProg, "uLight[9]");
-    g_light[9].setAmbient(glm::vec4(0.1f, 0.2f, 0.05f, 1.0f)); // °¾ºñªºÀô¹Ò¥ú
-    g_light[9].setDiffuse(glm::vec4(0.7f, 1.0f, 0.0f, 1.0f));  // ¹¡©M¶Àºñ¡]«GµÜ©iºñ¡^
+    g_light[9].setAmbient(glm::vec4(0.1f, 0.2f, 0.05f, 1.0f)); // åç¶ çš„ç’°å¢ƒå…‰
+    g_light[9].setDiffuse(glm::vec4(0.7f, 1.0f, 0.0f, 1.0f));  // é£½å’Œé»ƒç¶ ï¼ˆäº®èŠå§†ç¶ ï¼‰
     g_light[9].setAttenuation(1.0f, 0.5f, 0.2f);
     g_light[9].setIntensity(5.0f);
     g_light[9].setActiveType(2);
@@ -326,8 +298,8 @@ void loadScene(void)
     g_light[9]._wing[1].setScale(glm::vec3(0.5f, 0.01f, 0.3f));
 
 
-    // ²£¥Í¶K¹Ï
-    g_texData[0] = CTexturePool::getInstance().getTexture("texture/fabric.png",1); //¶}±ÒMipmapped
+    // ç”¢ç”Ÿè²¼åœ–
+    g_texData[0] = CTexturePool::getInstance().getTexture("texture/fabric.png",1); //é–‹å•ŸMipmapped
     g_texData[1] = CTexturePool::getInstance().getTexture("texture/fabric_normal.png",1);
 
     g_texData[2] = CTexturePool::getInstance().getTexture("texture/wall.jpg");
@@ -344,7 +316,7 @@ void loadScene(void)
     g_texData[35] = CTexturePool::getInstance().getTexture("texture/Marble_Tiles_Normal.png");
     g_texData[39] = CTexturePool::getInstance().getTexture("texture/wall_blue.jpg");
     g_texData[40] = CTexturePool::getInstance().getTexture("texture/wall_blue_normal.png");
-    g_texData[6] = CTexturePool::getInstance().getTexture("texture/Tiles012_512.png", 1); //¶}±ÒMipmapped
+    g_texData[6] = CTexturePool::getInstance().getTexture("texture/Tiles012_512.png", 1); //é–‹å•ŸMipmapped
 
     g_texData[8] = CTexturePool::getInstance().getTexture("texture/floor.jpg");
     g_texData[11] = CTexturePool::getInstance().getTexture("texture/floor_normal.png");
@@ -375,7 +347,7 @@ void loadScene(void)
     g_uiCubeMap = CubeMap_load_SOIL(0);
     g_uiCubeMap2 = CubeMap_load_SOIL(1);
 
-    //¥­­±´ºª«
+    //å¹³é¢æ™¯ç‰©
     g_texData[17] = CTexturePool::getInstance().getTexture("texture/bird1.png"); //bird
     g_texData[18] = CTexturePool::getInstance().getTexture("texture/bird1_normal.png");
     g_texData[19] = CTexturePool::getInstance().getTexture("texture/bird2.png");
@@ -391,7 +363,7 @@ void loadScene(void)
     g_texData[44] = CTexturePool::getInstance().getTexture("texture/hint5.png");
 
 
-    //¤ô°Êµe
+    //æ°´å‹•ç•«
     for (int i = 0; i < 30; i++) {
         std::string filename = "texture/water/" + std::to_string(i + 1) + ".png";
         g_waterTex[i] = CTexturePool::getInstance().getTexture(filename);
@@ -406,29 +378,29 @@ void loadScene(void)
     }
 
     for (int i = 0; i < 300; i++) {
-        // ²£¥ÍÀH¾÷³æ¦ì²y¤ºªº°¾²¾
+        // ç”¢ç”Ÿéš¨æ©Ÿå–®ä½çƒå…§çš„åç§»
         float maxXZRadius = 7.0f;
         float maxYRange = 3.5f;
 
         glm::vec3 offset;
         do {
-            // ¦b [-1, 1] °Ï¶¡ÀH¾÷¨ú­È
+            // åœ¨ [-1, 1] å€é–“éš¨æ©Ÿå–å€¼
             float x = (rand() / (float)RAND_MAX) * 2.0f - 1.0f;
             float y = (rand() / (float)RAND_MAX) * 2.0f - 1.0f;
             float z = (rand() / (float)RAND_MAX) * 2.0f - 1.0f;
 
-            // ­«·s²Õ¦X¦¨¦V¶q
+            // é‡æ–°çµ„åˆæˆå‘é‡
             offset = glm::vec3(x, y, z);
 
-            // ÀË¬d XZ ¥­­±¤º¶ZÂ÷¬O§_¦b¤¹³\½d³ò¤º
+            // æª¢æŸ¥ XZ å¹³é¢å…§è·é›¢æ˜¯å¦åœ¨å…è¨±ç¯„åœå…§
         } while (glm::length(glm::vec2(offset.x, offset.z)) > 1.0f);
 
-        // Áa¦V Y »P¾î¦V XZ ­Ó§OÁY©ñ
+        // ç¸±å‘ Y èˆ‡æ©«å‘ XZ å€‹åˆ¥ç¸®æ”¾
         offset.x *= maxXZRadius;
         offset.z *= maxXZRadius;
         offset.y *= maxYRange;
 
-        // °ò·ÇÂI
+        // åŸºæº–é»
         glm::vec3 base = glm::vec3(0.0f, 10.0f, -36.0f);
         glm::vec3 position = base + offset;
         
@@ -947,7 +919,7 @@ void loadScene(void)
     g_sakula.setScale(glm::vec3(6.0f, 6.0f, 6.0f));
     g_sakula.setMaterial(g_matWoodHoney);
 
-    //¥­­±¹Ï«¬
+    //å¹³é¢åœ–å‹
     for (int i = 0; i < 5; i++) {
         g_bird[i].setupVertexAttributes();
         g_bird[i].setShaderID(g_shadingProg, 3);
@@ -1135,51 +1107,51 @@ void loadScene(void)
     g_lightModeltwo_2.setMaterial(g_matGlassYellow);
   
     //2d UI
-    g_button[0].setScreenPos(400.0f, 400.0f); //·Ç¤ß
+    g_button[0].setScreenPos(400.0f, 400.0f); //æº–å¿ƒ
     g_button[0].init(g_uiShader);
 
     g_button[1].setScreenPos(50.0f, 60.0f);
     g_button[1].setType(1);
     g_button[1].init(g_uiShader);
 
-    g_2dviewLoc = glGetUniformLocation(g_uiShader, "mxView"); 	// ¨ú±o view matrix ÅÜ¼Æ¦ì¸m
+    g_2dviewLoc = glGetUniformLocation(g_uiShader, "mxView"); 	// å–å¾— view matrix è®Šæ•¸ä½ç½®
     glUniformMatrix4fv(g_2dviewLoc, 1, GL_FALSE, glm::value_ptr(g_2dmxView));
 
-    g_2dProjLoc = glGetUniformLocation(g_uiShader, "mxProj"); 	// ¨ú±o proj matrix ÅÜ¼Æ¦ì¸m
+    g_2dProjLoc = glGetUniformLocation(g_uiShader, "mxProj"); 	// å–å¾— proj matrix è®Šæ•¸ä½ç½®
     g_2dmxProj = glm::ortho(0.0f, (float)SCREEN_WIDTH, 0.0f, (float)SCREEN_HEIGHT, -1.0f, 1.0f);
     glUniformMatrix4fv(g_2dProjLoc, 1, GL_FALSE, glm::value_ptr(g_2dmxProj));
 
-    CCamera::getInstance().updateView(g_eyeloc); // ³]©w eye ¦ì¸m
+    CCamera::getInstance().updateView(g_eyeloc); // è¨­å®š eye ä½ç½®
     CCamera::getInstance().updateCenter(glm::vec3(0, 4, 0));
     CCamera::getInstance().updatePerspective(45.0f, (float)SCREEN_WIDTH / SCREEN_HEIGHT, 0.1f, 100.0f);
     glm::mat4 mxView = CCamera::getInstance().getViewMatrix();
     glm::mat4 mxProj = CCamera::getInstance().getProjectionMatrix();
 
-    GLint viewLoc = glGetUniformLocation(g_shadingProg, "mxView"); 	// ¨ú±o view matrix ÅÜ¼Æªº¦ì¸m
+    GLint viewLoc = glGetUniformLocation(g_shadingProg, "mxView"); 	// å–å¾— view matrix è®Šæ•¸çš„ä½ç½®
     glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(mxView));
 
-    GLint projLoc = glGetUniformLocation(g_shadingProg, "mxProj"); 	// ¨ú±o§ë¼v¯x°}ÅÜ¼Æªº¦ì¸m
+    GLint projLoc = glGetUniformLocation(g_shadingProg, "mxProj"); 	// å–å¾—æŠ•å½±çŸ©é™£è®Šæ•¸çš„ä½ç½®
     glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(mxProj));
 
-    glClearColor(1.0f, 1.0f, 1.0f, 1.0f); // ³]©w²M°£ back buffer ­I´ºªºÃC¦â
-    glEnable(GL_DEPTH_TEST); // ±Ò°Ê²`«×´ú¸Õ
+    glClearColor(1.0f, 1.0f, 1.0f, 1.0f); // è¨­å®šæ¸…é™¤ back buffer èƒŒæ™¯çš„é¡è‰²
+    glEnable(GL_DEPTH_TEST); // å•Ÿå‹•æ·±åº¦æ¸¬è©¦
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 }
 //----------------------------------------------------------------------------
 
 void render(void)
 {
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // ³]©w back buffer ªº­I´ºÃC¦â
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // è¨­å®š back buffer çš„èƒŒæ™¯é¡è‰²
     glm::mat4 mxView = CCamera::getInstance().getViewMatrix();
     glm::mat4 mxProj = CCamera::getInstance().getProjectionMatrix();
 
     glUseProgram(g_shadingProg);
-    GLint viewLoc = glGetUniformLocation(g_shadingProg, "mxView"); 	// ¨ú±o view matrix ÅÜ¼Æªº¦ì¸m
+    GLint viewLoc = glGetUniformLocation(g_shadingProg, "mxView"); 	// å–å¾— view matrix è®Šæ•¸çš„ä½ç½®
     glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(mxView));
-    GLint projLoc = glGetUniformLocation(g_shadingProg, "mxProj"); 	// ¨ú±o mxProj ÅÜ¼Æªº¦ì¸m
+    GLint projLoc = glGetUniformLocation(g_shadingProg, "mxProj"); 	// å–å¾— mxProj è®Šæ•¸çš„ä½ç½®
     glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(mxProj));
 
-    //¤W¶Ç¥ú·½»P¬Û¾÷¦ì¸m
+    //ä¸Šå‚³å…‰æºèˆ‡ç›¸æ©Ÿä½ç½®
     g_light[0].updateToShader();
     g_light[1].updateToShader();
     g_light[2].updateToShader();
@@ -1492,7 +1464,7 @@ void render(void)
     g_light[6]._wing[0].drawRaw();
 
 
-    //³z©úª«¥óÃ¸»s
+    //é€æ˜ç‰©ä»¶ç¹ªè£½
     for (int i = 0; i < 2; i++) {
         for (int j = 0; j < 4; j++) {
             w_glass[i][j].uploadMaterial();
@@ -1598,12 +1570,12 @@ void render(void)
         break_cube[i].drawRaw();
     }
     for (int i = 0; i < flower_count; i++) {
-        glUniform1i(glGetUniformLocation(g_nolightShader, "iColorType"), 2); // ¨Ï¥Î ui4Color
+        glUniform1i(glGetUniformLocation(g_nolightShader, "iColorType"), 2); // ä½¿ç”¨ ui4Color
         glUniform4fv(glGetUniformLocation(g_nolightShader, "ui4Color"), 1, glm::value_ptr(glm::vec4(1.0f, 0.72f, 0.77f, 1.0f)));
         cflower[i].drawRaw();
     }
 
-    glUseProgram(g_uiShader); // ¨Ï¥Î shader program
+    glUseProgram(g_uiShader); // ä½¿ç”¨ shader program
     glUniformMatrix4fv(g_2dviewLoc, 1, GL_FALSE, glm::value_ptr(g_2dmxView));
     glUniformMatrix4fv(g_2dProjLoc, 1, GL_FALSE, glm::value_ptr(g_2dmxProj));
     g_button[0].draw();
@@ -1638,22 +1610,22 @@ void update(float dt)
         break_cube[i].update(dt);
     }
 
-    //Billboards³¾ªº¤è¦V¥Ã»·´Â¦VÃèÀY
+    //Billboardsé³¥çš„æ–¹å‘æ°¸é æœå‘é¡é ­
     for (int i = 0; i < 5; i++) {
         glm::vec3 birdPos = g_bird[i].getPos();
         glm::vec3 dir = g_eyeloc - birdPos;
 
-        // ¥u¨ú XZ ¥­­±¤Wªº¤è¦V¦V¶q
+        // åªå– XZ å¹³é¢ä¸Šçš„æ–¹å‘å‘é‡
         dir.y = 0.0f;
         dir = glm::normalize(dir);
 
-        // ¹w³]´Â¦V¡]Z+¡^
+        // é è¨­æœå‘ï¼ˆZ+ï¼‰
         glm::vec3 forward = glm::vec3(0.0f, 0.0f, 1.0f);
 
-        // ­pºâ±ÛÂà¨¤
-        float angle = glm::degrees(atan2(dir.x, dir.z)); // ª`·N¶¶§Ç¡Gx, z
+        // è¨ˆç®—æ—‹è½‰è§’
+        float angle = glm::degrees(atan2(dir.x, dir.z)); // æ³¨æ„é †åºï¼šx, z
 
-        g_bird[i].setRotate(angle+180.0f, glm::vec3(0, 1, 0));  // ¥uÂ¶ Y ¶b±ÛÂà
+        g_bird[i].setRotate(angle+180.0f, glm::vec3(0, 1, 0));  // åªç¹ Y è»¸æ—‹è½‰
     }
 
     //Billboards hint
@@ -1661,27 +1633,27 @@ void update(float dt)
         glm::vec3 hintPos = hint[i].getPos();
         glm::vec3 dir = g_eyeloc - hintPos;
 
-        // ¥u¨ú XZ ¥­­±¤Wªº¤è¦V¦V¶q
+        // åªå– XZ å¹³é¢ä¸Šçš„æ–¹å‘å‘é‡
         dir.y = 0.0f;
         dir = glm::normalize(dir);
 
-        // ¹w³]´Â¦V¡]Z+¡^
+        // é è¨­æœå‘ï¼ˆZ+ï¼‰
         glm::vec3 forward = glm::vec3(0.0f, 0.0f, 1.0f);
 
-        // ­pºâ±ÛÂà¨¤
-        float angle = glm::degrees(atan2(dir.x, dir.z)); // ª`·N¶¶§Ç¡Gx, z
+        // è¨ˆç®—æ—‹è½‰è§’
+        float angle = glm::degrees(atan2(dir.x, dir.z)); // æ³¨æ„é †åºï¼šx, z
 
-        hint[i].setRotate(angle + 180.0f, glm::vec3(0, 1, 0));  // ¥uÂ¶ Y ¶b±ÛÂà
+        hint[i].setRotate(angle + 180.0f, glm::vec3(0, 1, 0));  // åªç¹ Y è»¸æ—‹è½‰
     }
 
-    ani_clock += dt; //¤ô°Êµe
+    ani_clock += dt; //æ°´å‹•ç•«
     if (ani_clock >= 0.1f) {
         if (ani < 29) ani += 1;
         else ani = 0;
         ani_clock = 0.0f;
     }
 
-    fan_clock += dt; //­·®°Âà°Ê
+    fan_clock += dt; //é¢¨æ‰‡è½‰å‹•
     float angle_fan = 180.0f * fan_clock;
     if (angle_fan >= 360.0f) {
         fan_clock = 0.0f;
@@ -1690,49 +1662,49 @@ void update(float dt)
     g_ceilingfan_2.setRotate(angle_fan, glm::vec3(0, 1, 0));
     g_gun.setRotate(angle_fan, glm::vec3(0, 1, 0));
     
-    //----------------------------------------ºj¬ÛÃö----------------------------------------
-    // ¨ú±oÄá¼v¾÷ªº°ò©³¦V¶q
+    //----------------------------------------æ§ç›¸é—œ----------------------------------------
+    // å–å¾—æ”å½±æ©Ÿçš„åŸºåº•å‘é‡
     glm::vec3 camPos = g_eyeloc;
-    glm::vec3 camFront = glm::normalize(CCamera::getInstance().getFront());  // ¬İªº¤è¦V
+    glm::vec3 camFront = glm::normalize(CCamera::getInstance().getFront());  // çœ‹çš„æ–¹å‘
     glm::vec3 camRight = glm::normalize(glm::cross(camFront, CCamera::getInstance().getUp()));
     glm::vec3 camUp = glm::normalize(glm::cross(camRight, camFront));
 
     g_gun.setRotate_center(g_eyeloc, camFront);
 
-    // °¾²¾¶ZÂ÷¡G¾a¥k¤@ÂI¡B¾a¤U¡B©¹«e
+    // åç§»è·é›¢ï¼šé å³ä¸€é»ã€é ä¸‹ã€å¾€å‰
     glm::vec3 offset =
-        glm::normalize(glm::cross(camFront, glm::vec3(0, 1, 0))) * 0.2f // ¥k
-        - glm::vec3(0, 1, 0) * 0.4f                                     // ¤U
-        + glm::normalize(glm::vec3(camFront.x, 0, camFront.z)) * 0.6f;  // ¤ô¥­«e
+        glm::normalize(glm::cross(camFront, glm::vec3(0, 1, 0))) * 0.2f // å³
+        - glm::vec3(0, 1, 0) * 0.4f                                     // ä¸‹
+        + glm::normalize(glm::vec3(camFront.x, 0, camFront.z)) * 0.6f;  // æ°´å¹³å‰
     float pitch = CCamera::getInstance().getPitch(); // -90 ~ +90
     offset.y -= glm::clamp(pitch / 90.0f, -1.0f, 1.0f) * 0.1f;
 
     glm::vec3 gunPos = camPos + offset;
     g_gun.setPos(glm::vec3(gunPos.x + 0.5f, gunPos.y, gunPos.z));
 
-    //®gÀ»
+    //å°„æ“Š
     if (shooting) {
         shooting_clock += dt;
 
-        // ­pºâ¦V«á²¾°Ê + ¦^¼uªº¦ì²¾¡]ªu z ¶b¬°¨Ò¡^
-        float t = shooting_clock; // 0 ~ 1 ¬í¤§¶¡
-        float back_offset = -exp(-6.0f * t) * cos(20.0f * t); // ¦V«á²r²¾¨Ã¾_Àú¦^¨Ó
+        // è¨ˆç®—å‘å¾Œç§»å‹• + å›å½ˆçš„ä½ç§»ï¼ˆæ²¿ z è»¸ç‚ºä¾‹ï¼‰
+        float t = shooting_clock; // 0 ~ 1 ç§’ä¹‹é–“
+        float back_offset = -exp(-6.0f * t) * cos(20.0f * t); // å‘å¾ŒçŒ›ç§»ä¸¦éœ‡ç›ªå›ä¾†
 
-        // ±N offset ®M¥Î¨ìª«Åéªº¦ì¸m
-        glm::vec3 basePos = g_gun.getPos(); // ­ì©l¦ì¸m
+        // å°‡ offset å¥—ç”¨åˆ°ç‰©é«”çš„ä½ç½®
+        glm::vec3 basePos = g_gun.getPos(); // åŸå§‹ä½ç½®
         glm::vec3 offsetPos = basePos + (-glm::vec3(camFront)) * back_offset;
-        g_gun.setPos(offsetPos); // ªu z ¶b²¾°Ê
+        g_gun.setPos(offsetPos); // æ²¿ z è»¸ç§»å‹•
 
         if (shooting_clock >= 1.0f) {
             shooting = false;
             shooting_clock = 0.0f;
 
-            // ¦^´_¦ì¸m
+            // å›å¾©ä½ç½®
             g_gun.setPos(basePos);
         }
     }
 
-    //----------------------------------------Äåªá¾ğ¬ÛÃö----------------------------------------
+    //----------------------------------------æ«»èŠ±æ¨¹ç›¸é—œ----------------------------------------
     if (flower_active && flower_count < 300) {
         flower_clock += dt;
         if(flower_clock >= 0.1f){
@@ -1767,7 +1739,7 @@ void update(float dt)
         if (flower_clock >= 4.0f) flower_clock = 0.0f;
     }
 
-    // Âê±¼¸¨
+    // é–æ‰è½
     if (lockdisable) {
         lockdisable_clock += dt;
 
@@ -1797,7 +1769,7 @@ void update(float dt)
         }
     }
 
-    //ºjÀ»¤Õ¬}
+    //æ§æ“Šå­”æ´
     for (int i = 0; i < 10; i++) {
         hole[i].update(dt);
     }
@@ -1809,30 +1781,30 @@ void releaseAll()
 }
 
 int main() {
-    // ------- ÀË¬d»P«Ø¥ßµøµ¡  ---------------  
+    // ------- æª¢æŸ¥èˆ‡å»ºç«‹è¦–çª—  ---------------  
     if (!glfwInit()) {
         std::cerr << "Failed to initialize GLFW" << std::endl;
         return -1;
     }
 
-    // ³]©w OpenGL ª©¥»»P Core Profile
+    // è¨­å®š OpenGL ç‰ˆæœ¬èˆ‡ Core Profile
     //glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3); // OpenGL 3.3
     //glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    //glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE); //¥u±Ò¥Î OpenGL 3.3 Core Profile¡]¤£¥]§tÂÂª© OpenGL ¥\¯à¡^
-    //glfwWindowHint(GLFW_RESIZABLE, GL_FALSE); // ¸T¤îµøµ¡¤j¤p§ïÅÜ
+    //glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE); //åªå•Ÿç”¨ OpenGL 3.3 Core Profileï¼ˆä¸åŒ…å«èˆŠç‰ˆ OpenGL åŠŸèƒ½ï¼‰
+    //glfwWindowHint(GLFW_RESIZABLE, GL_FALSE); // ç¦æ­¢è¦–çª—å¤§å°æ”¹è®Š
 
-    // «Ø¥ß OpenGL µøµ¡»P¸Óµøµ¡°õ¦æ®É©Ò»İªºªºª¬ºA¡B¸ê·½©MÀô¹Ò(context ¤W¤U¤å)
+    // å»ºç«‹ OpenGL è¦–çª—èˆ‡è©²è¦–çª—åŸ·è¡Œæ™‚æ‰€éœ€çš„çš„ç‹€æ…‹ã€è³‡æºå’Œç’°å¢ƒ(context ä¸Šä¸‹æ–‡)
     GLFWwindow* window = glfwCreateWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "OpenGL_4 Example 4 NPR", nullptr, nullptr);
     if (!window) {
         std::cerr << "Failed to create GLFW window" << std::endl;
         glfwTerminate();
         return -1;
     }
-    // ³]©w±N³o­Óµøµ¡ªº¸ê·½(OpenGL ªº¹Ï§Î¤W¤U¤å¡^»P·í«e°õ¦æºü¸j©w¡AÅı¸Ó°õ¦æºü¯à°÷¾Ş§@¸Óµøµ¡ªº¸ê·½
+    // è¨­å®šå°‡é€™å€‹è¦–çª—çš„è³‡æº(OpenGL çš„åœ–å½¢ä¸Šä¸‹æ–‡ï¼‰èˆ‡ç•¶å‰åŸ·è¡Œç·’ç¶å®šï¼Œè®“è©²åŸ·è¡Œç·’èƒ½å¤ æ“ä½œè©²è¦–çª—çš„è³‡æº
     glfwMakeContextCurrent(window);
 
-    // ³]©wµøµ¡¤j¤p, ³o¼Ë OpenGL ¤~¯àª¾¹D¦p¦ó±Nµøµ¡ªº¤º®eÃ¸»s¨ì¥¿½Tªº¦ì¸m
-    // °ò¥»¤W¼e»P°ª³]©w¦¨µøµ¡ªº¼e»P°ª§Y¥i
+    // è¨­å®šè¦–çª—å¤§å°, é€™æ¨£ OpenGL æ‰èƒ½çŸ¥é“å¦‚ä½•å°‡è¦–çª—çš„å…§å®¹ç¹ªè£½åˆ°æ­£ç¢ºçš„ä½ç½®
+    // åŸºæœ¬ä¸Šå¯¬èˆ‡é«˜è¨­å®šæˆè¦–çª—çš„å¯¬èˆ‡é«˜å³å¯
     glViewport(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 
     if (glewInit() != GLEW_OK) {
@@ -1841,14 +1813,14 @@ int main() {
     }
     // ---------------------------------------
 
-    // ³]©w¬ÛÃö¨Æ¥óªº callback ¨ç¦¡¡A¥H«K¨Æ¥óµo¥Í®É¡A¯à©I¥s¹ïÀ³ªº¨ç¦¡
-    glfwSetFramebufferSizeCallback(window, framebufferSizeCallback);// µøµ¡¤j¤p³Q§ïÅÜ®É
-    glfwSetKeyCallback(window, keyCallback);                        // ¦³Áä½Lªº«öÁä³Q«ö¤U®É
-    glfwSetMouseButtonCallback(window, mouseButtonCallback);        // ¦³·Æ¹«ªº«öÁä³Q«ö¤U®É
-    glfwSetCursorPosCallback(window, cursorPosCallback);            // ·Æ¹«¦b«ü©wªºµøµ¡¤W­±²¾°Ê®É
-    glfwSetScrollCallback(window, scrollCallback);			        // ·Æ¹«ºu½üºu°Ê®É
+    // è¨­å®šç›¸é—œäº‹ä»¶çš„ callback å‡½å¼ï¼Œä»¥ä¾¿äº‹ä»¶ç™¼ç”Ÿæ™‚ï¼Œèƒ½å‘¼å«å°æ‡‰çš„å‡½å¼
+    glfwSetFramebufferSizeCallback(window, framebufferSizeCallback);// è¦–çª—å¤§å°è¢«æ”¹è®Šæ™‚
+    glfwSetKeyCallback(window, keyCallback);                        // æœ‰éµç›¤çš„æŒ‰éµè¢«æŒ‰ä¸‹æ™‚
+    glfwSetMouseButtonCallback(window, mouseButtonCallback);        // æœ‰æ»‘é¼ çš„æŒ‰éµè¢«æŒ‰ä¸‹æ™‚
+    glfwSetCursorPosCallback(window, cursorPosCallback);            // æ»‘é¼ åœ¨æŒ‡å®šçš„è¦–çª—ä¸Šé¢ç§»å‹•æ™‚
+    glfwSetScrollCallback(window, scrollCallback);			        // æ»‘é¼ æ»¾è¼ªæ»¾å‹•æ™‚
 
-    // ©I¥s loadScene() «Ø¥ß»P¸ü¤J GPU ¶i¦æ´yÃ¸ªº´X¦ó¸ê®Æ 
+    // å‘¼å« loadScene() å»ºç«‹èˆ‡è¼‰å…¥ GPU é€²è¡Œæç¹ªçš„å¹¾ä½•è³‡æ–™ 
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
@@ -1857,21 +1829,21 @@ int main() {
     float lastTime = (float)glfwGetTime();
     while (!glfwWindowShouldClose(window)) {
         float currentTime = (float)glfwGetTime();
-        float deltaTime = currentTime - lastTime; // ­pºâ«e¤@­Ó frame ¨ì¥Ø«e¬°¤î¸g¹Lªº®É¶¡
+        float deltaTime = currentTime - lastTime; // è¨ˆç®—å‰ä¸€å€‹ frame åˆ°ç›®å‰ç‚ºæ­¢ç¶“éçš„æ™‚é–“
         lastTime = currentTime;
-        update(deltaTime);      // ©I¥s update ¨ç¦¡¡A¨Ã±N deltaTime ¶Ç¤J¡AÅı©Ò¦³°ÊºAª«¥ó®Ú¾Ú®É¶¡§ó·s¬ÛÃö¤º®e
+        update(deltaTime);      // å‘¼å« update å‡½å¼ï¼Œä¸¦å°‡ deltaTime å‚³å…¥ï¼Œè®“æ‰€æœ‰å‹•æ…‹ç‰©ä»¶æ ¹æ“šæ™‚é–“æ›´æ–°ç›¸é—œå…§å®¹
         render();
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
-    releaseAll(); // µ{¦¡µ²§ô«eÄÀ©ñ©Ò¦³ªº¸ê·½
+    releaseAll(); // ç¨‹å¼çµæŸå‰é‡‹æ”¾æ‰€æœ‰çš„è³‡æº
     glfwTerminate();
     return 0;
 }
 
 void genMaterial()
 {
-    // ³]©w§÷½è
+    // è¨­å®šæè³ª
     g_matBeige.setAmbient(glm::vec4(0.0918f, 0.0906f, 0.0863f, 1.0f));
     g_matBeige.setDiffuse(glm::vec4(0.8258f, 0.8152f, 0.7765f, 1.0f));
     g_matBeige.setSpecular(glm::vec4(0.25f, 0.25f, 0.25f, 1.0f));
@@ -1897,19 +1869,19 @@ void genMaterial()
     g_matGlassYellow.setSpecular(glm::vec4(0.8f, 0.8f, 0.6f, 0.3f));
     g_matGlassYellow.setShininess(96.0f);
 
-    g_matGlassPink.setAmbient(glm::vec4(0.4f, 0.15f, 0.3f, 0.3f));   // ²H¯»¬õ¡B·L·t
-    g_matGlassPink.setDiffuse(glm::vec4(1.0f, 0.3f, 0.6f, 0.3f));   // ©ú«G¯»¬õ¥ú
-    g_matGlassPink.setSpecular(glm::vec4(1.0f, 0.6f, 0.9f, 0.3f));  // ±aÂI¥Õ«G°ª¥ú
+    g_matGlassPink.setAmbient(glm::vec4(0.4f, 0.15f, 0.3f, 0.3f));   // æ·¡ç²‰ç´…ã€å¾®æš—
+    g_matGlassPink.setDiffuse(glm::vec4(1.0f, 0.3f, 0.6f, 0.3f));   // æ˜äº®ç²‰ç´…å…‰
+    g_matGlassPink.setSpecular(glm::vec4(1.0f, 0.6f, 0.9f, 0.3f));  // å¸¶é»ç™½äº®é«˜å…‰
     g_matGlassPink.setShininess(96.0f);
 
-    g_matGlassSkyBlue.setAmbient(glm::vec4(0.2f, 0.4f, 0.6f, 0.3f));   // ·L·tÂÅºñ
-    g_matGlassSkyBlue.setDiffuse(glm::vec4(0.3f, 0.9f, 1.0f, 0.3f));   // ¤ÑÂÅ¥D¦â
-    g_matGlassSkyBlue.setSpecular(glm::vec4(0.9f, 1.0f, 1.0f, 0.3f));  // ©ú«G°ª¥ú
+    g_matGlassSkyBlue.setAmbient(glm::vec4(0.2f, 0.4f, 0.6f, 0.3f));   // å¾®æš—è—ç¶ 
+    g_matGlassSkyBlue.setDiffuse(glm::vec4(0.3f, 0.9f, 1.0f, 0.3f));   // å¤©è—ä¸»è‰²
+    g_matGlassSkyBlue.setSpecular(glm::vec4(0.9f, 1.0f, 1.0f, 0.3f));  // æ˜äº®é«˜å…‰
     g_matGlassSkyBlue.setShininess(96.0f);
 
-    g_matGlassLightGreen.setAmbient(glm::vec4(0.15f, 0.35f, 0.1f, 0.3f));   // ¬X©Mºñ©³
-    g_matGlassLightGreen.setDiffuse(glm::vec4(0.7f, 1.0f, 0.3f, 0.3f));    // ©ú«G¹àºñ
-    g_matGlassLightGreen.setSpecular(glm::vec4(0.9f, 1.0f, 0.6f, 0.3f));   // ±a¤@ÂI¥Õªº°ª¥ú
+    g_matGlassLightGreen.setAmbient(glm::vec4(0.15f, 0.35f, 0.1f, 0.3f));   // æŸ”å’Œç¶ åº•
+    g_matGlassLightGreen.setDiffuse(glm::vec4(0.7f, 1.0f, 0.3f, 0.3f));    // æ˜äº®å«©ç¶ 
+    g_matGlassLightGreen.setSpecular(glm::vec4(0.9f, 1.0f, 0.6f, 0.3f));   // å¸¶ä¸€é»ç™½çš„é«˜å…‰
     g_matGlassLightGreen.setShininess(96.0f);
 
     g_matPlantGreen.setAmbient(glm::vec4(0.1f, 0.25f, 0.1f, 1.0f));
@@ -1947,28 +1919,28 @@ void genMaterial()
     g_matClothBeige.setSpecular(glm::vec4(0.05f, 0.05f, 0.05f, 1.0f));
     g_matClothBeige.setShininess(10.0f);
 
-    g_matWoodWhite.setAmbient(glm::vec4(0.2f, 0.2f, 0.18f, 1.0f));   // ·L·x¥Õ¥ú¡A³±¼v¤¤¤£¦º¥Õ
-    g_matWoodWhite.setDiffuse(glm::vec4(0.9f, 0.9f, 0.85f, 1.0f));   // ¥DÅé¥Õ¤¤±a¦ÛµM·P
-    g_matWoodWhite.setSpecular(glm::vec4(0.05f, 0.05f, 0.05f, 1.0f)); // ¤ì§÷´X¥GµL¤Ï¥ú
+    g_matWoodWhite.setAmbient(glm::vec4(0.2f, 0.2f, 0.18f, 1.0f));   // å¾®æš–ç™½å…‰ï¼Œé™°å½±ä¸­ä¸æ­»ç™½
+    g_matWoodWhite.setDiffuse(glm::vec4(0.9f, 0.9f, 0.85f, 1.0f));   // ä¸»é«”ç™½ä¸­å¸¶è‡ªç„¶æ„Ÿ
+    g_matWoodWhite.setSpecular(glm::vec4(0.05f, 0.05f, 0.05f, 1.0f)); // æœ¨æå¹¾ä¹ç„¡åå…‰
     g_matWoodWhite.setShininess(8.0f);
 
-    g_matConcreteWhite.setAmbient(glm::vec4(0.2f, 0.2f, 0.2f, 1.0f));     // ³±¼v°Ï¤´«O¦³¨Ç³\«G«×
-    g_matConcreteWhite.setDiffuse(glm::vec4(0.95f, 0.95f, 0.95f, 1.0f)); // ¥DÅé¥Õ¦â
-    g_matConcreteWhite.setSpecular(glm::vec4(0.05f, 0.05f, 0.05f, 1.0f)); // ´X¥GµL¥ú¿A
+    g_matConcreteWhite.setAmbient(glm::vec4(0.2f, 0.2f, 0.2f, 1.0f));     // é™°å½±å€ä»ä¿æœ‰äº›è¨±äº®åº¦
+    g_matConcreteWhite.setDiffuse(glm::vec4(0.95f, 0.95f, 0.95f, 1.0f)); // ä¸»é«”ç™½è‰²
+    g_matConcreteWhite.setSpecular(glm::vec4(0.05f, 0.05f, 0.05f, 1.0f)); // å¹¾ä¹ç„¡å…‰æ¾¤
     g_matConcreteWhite.setShininess(4.0f);
 
-    g_matWoodDark.setAmbient(glm::vec4(0.08f, 0.05f, 0.03f, 1.0f));   // ²`¦âÀô¹Ò¦â
-    g_matWoodDark.setDiffuse(glm::vec4(0.25f, 0.15f, 0.10f, 1.0f));   // ²`¬õ´Ä¦â½Õ
-    g_matWoodDark.setSpecular(glm::vec4(0.10f, 0.08f, 0.06f, 1.0f));  // ¬X©MÃè­±¥ú
-    g_matWoodDark.setShininess(16.0f);                                // ·L¥ú¿A·P
+    g_matWoodDark.setAmbient(glm::vec4(0.08f, 0.05f, 0.03f, 1.0f));   // æ·±è‰²ç’°å¢ƒè‰²
+    g_matWoodDark.setDiffuse(glm::vec4(0.25f, 0.15f, 0.10f, 1.0f));   // æ·±ç´…æ£•è‰²èª¿
+    g_matWoodDark.setSpecular(glm::vec4(0.10f, 0.08f, 0.06f, 1.0f));  // æŸ”å’Œé¡é¢å…‰
+    g_matWoodDark.setShininess(16.0f);                                // å¾®å…‰æ¾¤æ„Ÿ
 
-    g_matWater.setAmbient(glm::vec4(0.0f, 0.1f, 0.3f, 0.4f));     // ²`ÂÅ¡AÀô¹Ò¦â§C½Õ
-    g_matWater.setDiffuse(glm::vec4(0.0f, 0.6f, 1.0f, 0.4f));     // ¹¡©MÂÅºñ¡A¥D­nÃC¦â
-    g_matWater.setSpecular(glm::vec4(0.8f, 0.9f, 1.0f, 0.4f));    // ©ú«G°ª¥ú
-    g_matWater.setShininess(96.0f);                              // «G¿A·P±j¯P
+    g_matWater.setAmbient(glm::vec4(0.0f, 0.1f, 0.3f, 0.4f));     // æ·±è—ï¼Œç’°å¢ƒè‰²ä½èª¿
+    g_matWater.setDiffuse(glm::vec4(0.0f, 0.6f, 1.0f, 0.4f));     // é£½å’Œè—ç¶ ï¼Œä¸»è¦é¡è‰²
+    g_matWater.setSpecular(glm::vec4(0.8f, 0.9f, 1.0f, 0.4f));    // æ˜äº®é«˜å…‰
+    g_matWater.setShininess(96.0f);                              // äº®æ¾¤æ„Ÿå¼·çƒˆ
 
-    g_matYellowSofa.setAmbient(glm::vec4(0.3f, 0.3f, 0.1f, 1.0f));    // ¬X©M¶À½ÅÀô¹Ò¦â
-    g_matYellowSofa.setDiffuse(glm::vec4(1.0f, 0.85f, 0.2f, 1.0f));   // ©ú«G·Å·xªº¶À
-    g_matYellowSofa.setSpecular(glm::vec4(0.3f, 0.3f, 0.3f, 1.0f));   // §C½Õ°ª¥ú¡A¤£·|¤Ó¶ì½¦
-    g_matYellowSofa.setShininess(32.0f);  // ¾A¤¤¥ú¿A¡A°¾¦V¥¬®Æ©Î¨È¥ú¥Ö­²
+    g_matYellowSofa.setAmbient(glm::vec4(0.3f, 0.3f, 0.1f, 1.0f));    // æŸ”å’Œé»ƒè¤ç’°å¢ƒè‰²
+    g_matYellowSofa.setDiffuse(glm::vec4(1.0f, 0.85f, 0.2f, 1.0f));   // æ˜äº®æº«æš–çš„é»ƒ
+    g_matYellowSofa.setSpecular(glm::vec4(0.3f, 0.3f, 0.3f, 1.0f));   // ä½èª¿é«˜å…‰ï¼Œä¸æœƒå¤ªå¡‘è† 
+    g_matYellowSofa.setShininess(32.0f);  // é©ä¸­å…‰æ¾¤ï¼Œåå‘å¸ƒæ–™æˆ–äºå…‰çš®é©
 }
